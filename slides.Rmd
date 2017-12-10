@@ -1,22 +1,21 @@
 ---
-output:
-  html_document: default
-  beamer_presentation: default
-  slidy_presentation: default
----
----
 title: "Map"
 author: "Dayana simaluisa"
 date: "6 de diciembre de 2017"
-output:
-  slidy_presentation: default
-  ioslides_presentation: default
-  beamer_presentation: default
+output: ioslides_presentation
 
+---
+## Mapas
+```{r , echo=FALSE}
 
-
-```{r , echo=TRUE}
 library(leaflet)
+my_map =leaflet() %>%
+  addMarkers(lat=-0.3145,lng=-78.4437,popup="Espe University")
+
+```
+
+
+```{r , echo=FALSE}
 
 df<-data.frame(lat = runif(100,min = -0.32,max=-0.305),lng = runif(100,min = -78.45,max = -78.43))
 
@@ -27,8 +26,3 @@ df%>%
   addCircleMarkers()
 
 ```
-
-
-
-
-
